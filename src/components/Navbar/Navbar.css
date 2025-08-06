@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit","sans-serif";
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    border-bottom: 2px solid #3c3c3c;
+    color: #ddd;
+}
+
+.logo{
+    width: max(12vw,120px);
+
+}
+
+.navbar ul{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navbar li{
+    cursor: pointer;
+}
+
+.nav-right{
+   display: flex;
+   align-items: center;
+   gap: max(1vw,12px); 
+}
+
+.nav-right select{
+    padding: 5px 8px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+}
+
+.navbar option{
+    background-color: #09005c;
+    color: white;
+}
+
+.navbar button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #393939;
+    background-color: white;
+    cursor: pointer;
+}
+
+.navbar button img{
+    width: 14px;
+}
+
+
+
+
+/* General styles already provided stay the same */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.navbar li {
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* ----------------- Responsive ------------------ */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 20px 5%;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links ul {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 10%;
+    display: none;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links li {
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .nav-right select,
+  .nav-right button {
+    width: 100%;
+  }
+}
